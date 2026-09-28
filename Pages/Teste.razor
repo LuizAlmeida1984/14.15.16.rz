@@ -1,14 +1,16 @@
 ﻿@page "/teste"
 
-<h1 class="text-center text primary p-9">Teste</h1>
+<h1 class="text-center text primary p-9">
+    @xpto
+    </h1>
 
 <div>
     <label class="text-muted">Digite seu nome:</label>
-    <input class="form-control" />
+    <input class="form-control" @bind-value=xpto>
 </div>
 
 <div class="mt-3">
-    <button class="btn btn-outline-primary">Enviar</button>
+    <button @onclick="Mudar" class="btn btn-outline-primary">Enviar</button>
 </div>
 
 <div class="row border mt-3">
@@ -21,11 +23,20 @@
     <div class="col bg-warning">
         Coluna 3
     </div>
-</div>"
-
-<div class="mt-3 rounded p-d shadow">
-    <h1>Estte é um texto em tamanho H1</h1>
 </div>
 
-@code {
- }
+<div class="mt-3 rounded p-d shadow">
+    <h1>Este é um texto em tamanho H1</h1>
+</div>
+
+@code 
+{
+    string xpto = "Andre Campos";
+
+void Mudar()
+    {
+        xpto = "Componente Exemplo";
+    }
+
+
+}
